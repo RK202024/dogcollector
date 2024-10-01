@@ -5,31 +5,32 @@
 <section class="page-header">
   <h1>Dog List</h1>
   <img src="{% static 'images/tough.png' %}" alt="A tough dog" />
-  <img src="{% static 'images/tiny.png' %}" alt="A tiny dog" />
-  <img src="{% static 'images/shaggy.png' %}" alt="A shaggy dog" />
+  <img src="{% static 'images/tiny.jpg' %}" alt="A tiny dog" />
+  <img src="{% static 'images/shaggy.jpg' %}" alt="A shaggy dog" />
   <img src="{% static 'images/pouty.png' %}" alt="A pouty dog" />
 </section>
 
 <section class="card-container">
   {% for dog in dogs %}
-  <div class="card">
-    <div class="card-content">
-      <div class="card-img-container">
-        <img
-          src="{% static 'images/cool-dog.png' %}"
-          alt="A cool boy dog"
-        />
-      </div>
-      <h2 class="card-title">{{ dog.name }}</h2>
-      {% if dog.age > 0 %}
-      <p>A {{ dog.age }} year old {{ dog.breed }}</p>
-      {% else %}
-      <p>A {{ dog.breed }} puppy.</p>
-      {% endif %}
-      <p><small>{{ dog.description }}</small></p>
-    </div>
-  </div>
-  {% endfor %}
-</section>
-
+      <div class="card">
+          <a href="{% url 'dog-detail' dog.id %}">
+              <div class="card-content">
+                  <div class="card-img-container">
+                      <img
+                    src="{% static 'images/tough.png' %}"
+                    alt="A tough boy dog"
+                      />
+              </div>
+              <h2 class="card-title">{{ dog.name }}</h2>
+              {% if dog.age > 0 %}
+                  <p>A {{ dog.age }} year old {{ dog.breed }}</p>
+              {% else %}
+                  <p>A {{ dog.breed }} doggie.</p>
+              {% endif %}
+                  <p><small>{{ dog.description }}</small></p>
+            </div>
+          </a>
+          </div>
+          {% endfor %}
+      </section>
 {% endblock %}

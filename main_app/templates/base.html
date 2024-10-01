@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      type="image/png"
-      href="{% static 'images/splash.svg' %}"
+      type="image/jpg"
+      href="{% static 'images/bucktooth.jpg' %}"
     />
     <title>Dog Collector</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
@@ -20,15 +20,15 @@
       <div class="header-logo-container">
         <a href="/">
           <img
-            src="{% static 'images/header-logo.svg' %}"
+            src="{% static 'images/dog-collector.png' %}"
             alt="The Dog Collector Logo"
           />
         </a>
       </div>
       <nav>
         <ul>
-          <li><a href="/dogs">All Dogs</a></li>
-          <li><a href="/about">About</a></li>
+          <<li><a href="{% url 'dog-index' %}">All Dogs</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
         </ul>
       </nav>
     </header>
