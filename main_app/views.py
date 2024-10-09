@@ -1,4 +1,3 @@
-from typing import Any
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -50,7 +49,8 @@ def add_feeding(request, dog_id):
 
 class ToyCreate(CreateView):
     model = Toy
-    fields = ['name', 'breed', 'description', 'age']
+    fields = '__all__'
+    #fields = ['name', 'breed', 'description', 'age']
     
 class ToyList(ListView):
     model = Toy

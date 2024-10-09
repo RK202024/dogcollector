@@ -12,7 +12,6 @@ urlpatterns = [
   path('dogs/<int:dog_id>/add-feeding/', views.add_feeding, name='add-feeding'),
   path('dogs/<int:dog_id>/associate-toy/<int:toy_id>/', views.associate_toy, name='associate-toy'),
   path('dogs/<int:dog_id>/remove-toy/<int:toy_id>/', views.remove_toy, name='remove-toy'),
-  path('dogs/<int:dog_id>/remove-toy/<int:toy_id>/', views.remove_toy, name='remove-toy'),
   path('toys/create/', views.ToyCreate.as_view(), name='toy-create'),
   path('toys/<int:pk>/', views.ToyDetail.as_view(), name='toy-detail'),
   path('toys/', views.ToyList.as_view(), name='toy-index'),
