@@ -71,6 +71,7 @@ def associate_toy(request, dog_id, toy_id):
   return redirect('dog-detail', dog_id=dog_id)
 
 def remove_toy(request, dog_id, toy_id):
-    return redirect('dog-detail', dog_id=dog.id)
+  Dog.objects.get(id=dog_id).toys.remove(toy_id)
+  return redirect('dog-detail', dog_id=dog.id)
 
   
